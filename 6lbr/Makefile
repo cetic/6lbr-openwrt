@@ -31,17 +31,22 @@ endef
 
 define Build/Compile
 	mkdir -p $(6LBR_DIR)/bin
+	$(MAKE) -C $(6LBR_DIR) clean
 	CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)" $(MAKE) -C $(6LBR_DIR) \
 		TARGET=native CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 CETIC_6LBR_ROUTER=1 WITH_UDPCLIENT=0
 	mv $(6LBR_DIR)/cetic-6lbr.native $(6LBR_DIR)/bin/cetic_6lbr_router
+	$(MAKE) -C $(6LBR_DIR) clean
 	CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)" $(MAKE) -C $(6LBR_DIR) \
 		TARGET=native CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 CETIC_6LBR_SMARTBRIDGE=1 WITH_UDPCLIENT=0
 	mv $(6LBR_DIR)/cetic-6lbr.native $(6LBR_DIR)/bin/cetic_6lbr_smart_bridge
+	$(MAKE) -C $(6LBR_DIR) clean
 	CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)" $(MAKE) -C $(6LBR_DIR) \
 		CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 CETIC_6LBR_6LR=1 WITH_UDPCLIENT=1 WITH_UDPSERVER=0
 	mv $(6LBR_DIR)/cetic-6lbr.native $(6LBR_DIR)/bin/cetic_6lbr_6lr
+	$(MAKE) -C $(6LBR_DIR) clean
 	CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)" $(MAKE) -C $(6LBR_DIR) \
                 TARGET=native CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 plugins
+	$(MAKE) -C $(6LBR_DIR)/tools clean
 	CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)" $(MAKE) -C $(6LBR_DIR)/tools \
                 CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 
 endef
