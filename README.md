@@ -1,1 +1,1 @@
-# 6lbr-openwrt
+OpenWRT package feed for 6LBR
