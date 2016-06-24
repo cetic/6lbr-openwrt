@@ -19,7 +19,7 @@ define Package/6lbr
   CATEGORY:=Network
   TITLE:=CETIC 6LBR
   MAINTAINER:=Laurent <laurent.deru@cetic.be>
-  DEPENDS:=+libncurses +kmod-tun +kmod-usb-serial-ftdi +logrotate
+  DEPENDS:=+libncurses +kmod-tun +kmod-usb-serial-ftdi kmod-usb-acm +logrotate
 endef
 
 define Package/6lbr/description
