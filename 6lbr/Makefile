@@ -26,9 +26,6 @@ define Package/6lbr/description
 6LBR
 endef
 
-define Build/Configure
-endef
-
 define Build/Compile
 	mkdir -p $(6LBR_DIR)/bin
 	$(MAKE) -C $(6LBR_DIR) clean
