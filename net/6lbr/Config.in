@@ -1,0 +1,11 @@
+if PACKAGE_6lbr
+
+config SIXLBR_COMPILE_PLUGINS
+	bool "Build 6lbr default plugins"
+	default n
+        help
+          Enabling this allows the compilation of the default 6lbr plugins,
+          currently dummy and lwm2m_client.
+          By default the compilation is disabled as it fails on some platforms.
+
+endif
