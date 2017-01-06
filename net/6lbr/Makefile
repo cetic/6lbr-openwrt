@@ -18,13 +18,14 @@ include $(INCLUDE_DIR)/package.mk
 define Package/6lbr
   SECTION:=net
   CATEGORY:=Network
-  TITLE:=CETIC 6LBR
+  TITLE:=CETIC 6LoWPAN Border Router
   MAINTAINER:=Laurent <laurent.deru@cetic.be>
   DEPENDS:=+libncurses +kmod-tun +kmod-usb-serial +kmod-usb-serial-ftdi kmod-usb-acm +logrotate +librt
 endef
 
 define Package/6lbr/description
-6LBR
+CETIC 6LBR is an enhanced version of Contiki's 6LoWPAN Border Router solution.
+It provides network configuration and monitoring, and supports out of the box redundant and distributed operating modes.
 endef
 
 define Package/6lbr/config
