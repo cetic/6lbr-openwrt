@@ -71,6 +71,9 @@ define Package/6lbr/install
 	$(INSTALL_DIR) $(1)/usr/lib/6lbr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/examples/6lbr/bin/* $(1)/usr/lib/6lbr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/examples/6lbr/tools/nvm_tool $(1)/usr/lib/6lbr/bin
+ifeq ($(CONFIG_SIXLBR_COMPILE_PLUGINS),y)
+	$(MAKE) -C $(PKG_BUILD_DIR)/examples/6lbr DESTDIR=$(1) plugins-install
+endif
 endef
 
 define Package/6lbr/postinst
