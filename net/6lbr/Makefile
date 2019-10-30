@@ -37,16 +37,13 @@ define Build/Compile
 	mkdir -p $(PKG_BUILD_DIR)/examples/6lbr/bin
 	$(MAKE) -C $(PKG_BUILD_DIR)/examples/6lbr clean
 	CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)" $(MAKE) -C $(PKG_BUILD_DIR)/examples/6lbr \
-                TARGET=native CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 CETIC_6LBR_ROUTER=1 WITH_UDPCLIENT=0
-	mv $(PKG_BUILD_DIR)/examples/6lbr/cetic-6lbr.native $(PKG_BUILD_DIR)/examples/6lbr/bin/cetic_6lbr_router
+                TARGET=native CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 cetic_6lbr_router
 	$(MAKE) -C $(PKG_BUILD_DIR)/examples/6lbr clean
 	CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)" $(MAKE) -C $(PKG_BUILD_DIR)/examples/6lbr \
-                TARGET=native CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 CETIC_6LBR_SMARTBRIDGE=1 WITH_UDPCLIENT=0
-	mv $(PKG_BUILD_DIR)/examples/6lbr/cetic-6lbr.native $(PKG_BUILD_DIR)/examples/6lbr/bin/cetic_6lbr_smart_bridge
+                TARGET=native CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 cetic_6lbr_smart_bridge
 	$(MAKE) -C $(PKG_BUILD_DIR)/examples/6lbr clean
 	CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)" $(MAKE) -C $(PKG_BUILD_DIR)/examples/6lbr \
-                CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 CETIC_6LBR_6LR=1 WITH_UDPCLIENT=1 WITH_UDPSERVER=0
-	mv $(PKG_BUILD_DIR)/examples/6lbr/cetic-6lbr.native $(PKG_BUILD_DIR)/examples/6lbr/bin/cetic_6lbr_6lr
+                CC="$(TARGET_CC)" LD="$(TARGET_CC)" AR="$(TARGET_AR)" V=1 cetic_6lbr_ndp_router
 ifeq ($(CONFIG_SIXLBR_COMPILE_PLUGINS),y)
 	$(MAKE) -C $(PKG_BUILD_DIR)/examples/6lbr plugins-clean
 	CFLAGS="$(TARGET_CFLAGS)" LDFLAGS="$(TARGET_LDFLAGS)" $(MAKE) -C $(PKG_BUILD_DIR)/examples/6lbr \
